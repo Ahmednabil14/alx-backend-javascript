@@ -3,6 +3,7 @@ import Currency from './3-currency';
 export default class Pricing {
   constructor(amount, currency) {
     this._amount = amount;
+    if (!(currency instanceof Currency)) throw new Error('Currency must be an instance of Currency');
     this._currency = currency;
   }
 
@@ -19,6 +20,7 @@ export default class Pricing {
   }
 
   set currency(currency) {
+    if (!(currency instanceof Currency)) throw new Error('Currency must be an instance of Currency');
     this._currency = currency;
   }
 
